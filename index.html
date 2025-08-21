@@ -1,194 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Car & Tour Services - Bright, modern homepage">
-<title>Car & Tour Services</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    /* Base */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="epmJl5MCewnNvaQ97xzcDIt8t4INjtN641iCu5fDGW8" />
+  <meta name="description" content="Car & Tour Services - Reliable transport across Kiambu & Nairobi" />
+  <title>Car & Tour Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
     body { line-height:1.4; color:#333; background:#FFF8E7; }
     a { text-decoration:none; color:inherit; }
 
-    /* Header */
     header {
-        background:#FF6F61;
-        color:#fff;
-        padding:0.3rem 1rem;
-        position:sticky;
-        top:0;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        z-index:1000;
+      background:#FF6F61;
+      color:#fff;
+      padding:0.3rem 1rem;
+      position:sticky;
+      top:0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
     }
     .logo { font-size:1.2rem; font-weight:bold; }
     nav ul { display:flex; list-style:none; gap:0.6rem; }
     nav ul li a { color:#fff; font-weight:500; font-size:0.9rem; transition:0.3s; }
     nav ul li a:hover { color:#00796B; }
 
-    /* Hero */
     .hero {
-        position:relative;
-        display:flex; flex-direction:column; align-items:center; justify-content:center;
-        height:40vh;
-        background:url('https://source.unsplash.com/1600x900/?kenya,safari') no-repeat center/cover;
-        text-align:center;
-        color:#fff;
-        padding:0 1rem;
-        overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:2rem 1rem;
+      text-align:center;
+      background:#FFF5EE;
     }
-    .hero::before {
-        content:"";
-        position:absolute;
-        top:0; left:0; right:0; bottom:0;
-        background:rgba(255,111,97,0.5); /* bright overlay */
-        z-index:0;
+    .hero img {
+      max-width:100%;
+      height:auto;
+      border-radius:8px;
+      margin-bottom:1rem;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
     }
-    .hero h1 { font-size:2rem; margin-bottom:0.5rem; z-index:1; position:relative; }
-    .hero p { font-size:1rem; margin-bottom:0.8rem; z-index:1; position:relative; }
-    .hero a { padding:0.6rem 1.2rem; background:#25D366; color:#fff; font-weight:bold; border-radius:6px; font-size:0.95rem; transition:0.3s; z-index:1; position:relative; }
-    .hero a:hover { background:#1ebe57; }
+    .hero h1 { font-size:1.6rem; margin-bottom:0.5rem; color:#00796B; }
+    .hero p { font-size:0.9rem; margin-bottom:0.8rem; }
+    .hero a {
+      padding:0.5rem 1rem;
+      background:#FF6F61;
+      color:#fff;
+      font-weight:bold;
+      border-radius:4px;
+      font-size:0.85rem;
+      transition:0.3s;
+    }
+    .hero a:hover { background:#e65c50; }
 
-    /* Sections */
     section { padding:2rem 1rem; }
     section h2 { text-align:center; margin-bottom:1rem; font-size:1.5rem; color:#00796B; }
 
-    /* About */
-    .about { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center; }
-    .about img { width:100%; max-width:250px; height:auto; border-radius:6px; }
-    .about div { max-width:500px; font-size:0.9rem; }
+    .about, .services, .tours {
+      display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; align-items:center;
+    }
+    .about img {
+      width:100%; max-width:250px; border-radius:6px;
+    }
+    .about div {
+      max-width:400px; font-size:0.9rem;
+    }
 
-    /* Services */
-    .services { display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; }
     .service-card {
-        flex:1 1 180px; background:#FFF5EE; padding:1rem; border-radius:6px; text-align:center; transition:0.3s;
+      flex:1 1 180px;
+      background:#FFF5EE;
+      padding:1rem;
+      border-radius:6px;
+      text-align:center;
+      transition:0.3s;
     }
     .service-card:hover { background:#FFE4C4; }
     .service-card i { font-size:1.5rem; color:#FF6F61; margin-bottom:0.5rem; }
 
-    /* Tours */
-    .tours { display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; }
-    .tour-card { flex:1 1 200px; border-radius:6px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
-    .tour-card img { width:100%; height:100px; object-fit:cover; border-radius:6px; }
+    .tour-card {
+      flex:1 1 200px;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 1px 4px rgba(0,0,0,0.1);
+    }
+    .tour-card img { width:100%; height:90px; object-fit:cover; }
     .tour-card div { padding:0.6rem; }
     .tour-card h3 { margin-bottom:0.2rem; font-size:0.95rem; color:#00796B; }
     .tour-card p { font-size:0.8rem; color:#555; }
 
-    /* Footer */
-    footer { background:#00796B; color:#fff; text-align:center; padding:0.8rem; font-size:0.85rem; }
+    footer {
+      background:#00796B;
+      color:#fff;
+      text-align:center;
+      padding:0.8rem;
+      font-size:0.85rem;
+    }
     footer a { color:#FF6F61; }
 
-    /* WhatsApp CTA */
     .whatsapp-cta {
-        position:fixed;
-        bottom:20px;
-        right:20px;
-        background:#25D366;
-        color:#fff;
-        padding:10px 15px;
-        border-radius:50px;
-        font-weight:bold;
-        box-shadow:0 2px 6px rgba(0,0,0,0.2);
-        z-index:999;
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      padding:10px 15px;
+      border-radius:50px;
+      font-weight:bold;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      z-index:999;
     }
 
-    /* Responsive */
     @media(max-width:768px){
-        nav ul { flex-direction:column; gap:0.4rem; }
-        .about { flex-direction:column; text-align:center; }
+      nav ul { flex-direction:column; gap:0.4rem; }
+      .about { flex-direction:column; text-align:center; }
     }
-</style>
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<header>
+  <!-- Header -->
+  <header>
     <div class="logo">Car & Tour Services</div>
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#tours">Tours</a></li>
-        </ul>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tours">Tours</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<!-- Hero -->
-<section class="hero">
-    <h1>Explore Kenya with Comfort</h1>
-    <p>Reliable car hire and guided tours for all your adventures.</p>
-    <a href="https://wa.me/254721609343" target="_blank">Book Now</a>
-</section>
+  <!-- Hero with Image -->
+  <section class="hero">
+    <img src="images.jpg" alt="Hero Image" />
+    <h1>Reliable Transport Across Kiambu & Nairobi</h1>
+    <p>Daily rides, event transfers, and car hire services tailored to your needs.</p>
+    <a href="https://wa.me/254721609343" target="_blank">Request a Ride</a>
+  </section>
 
-<!-- About -->
-<section id="about">
+  <!-- About -->
+  <section id="about">
     <h2>About Us</h2>
     <div class="about">
-        <img src="AfricanSafari-A-family-safari-in-Tsavo-6-1-240x360.jpg" alt="About Image">
-        <div>
-            <p>We provide professional car hire and tours across Kenya, ensuring comfort, safety, and unforgettable travel experiences for individuals, families, and groups.</p>
-        </div>
+      <img src="A9HJooAf.webp" alt="Transport Image" />
+      <div>
+        <p>We provide professional car hire and transport services across Kenya, ensuring comfort, safety, and reliable travel for individuals, families, and groups.</p>
+      </div>
+      <img src="AfricanSafari-A-family-safari-in-Tsavo-6-1-240x360.jpg" alt="Local Roads Image" />
     </div>
-</section>
+  </section>
 
-<!-- Services -->
-<section id="services">
+  <!-- Services -->
+  <section id="services">
     <h2>Our Services</h2>
     <div class="services">
-        <div class="service-card">
-            <i class="fas fa-car"></i>
-            <h3>Car Hire</h3>
-            <p>Rent cars for daily, weekly, or long-term trips.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-bus"></i>
-            <h3>Transport Services</h3>
-            <p>Safe and comfortable transport for events and transfers.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-map-marked-alt"></i>
-            <h3>Guided Tours</h3>
-            <p>Customized tours to Kenya’s top destinations with expert guides.</p>
-        </div>
+      <div class="service-card">
+        <i class="fas fa-car"></i>
+        <h3>Car Hire</h3>
+        <p>Rent cars for daily, weekly, or long-term trips.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-bus"></i>
+        <h3>Transport Services</h3>
+        <p>Safe and comfortable transport for events and transfers.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Guided Tours</h3>
+        <p>Customized tours to Kenya’s top destinations with expert guides.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Tours -->
-<section id="tours">
+  <!-- Tours -->
+  <section id="tours">
     <h2>Popular Tours</h2>
     <div class="tours">
-        <div class="tour-card">
-            <img src="Masaimara.png" alt="Masai Mara Tour">
-            <div>
-                <h3>Masai Mara Safari</h3>
-                <p>Explore Kenya’s wildlife with guided safaris.</p>
-            </div>
+      <div class="tour-card">
+        <img src="Masaimara 200pxl.png" alt="Masai Mara Tour" />
+        <div>
+          <h3>Masai Mara Safari</h3>
+          <p>Explore Kenya’s wildlife with guided safaris.</p>
         </div>
-        <div class="tour-card">
-            <img src="A9HJooAf.webp" alt="Mount Kenya Tour">
-            <div>
-                <h3>Mount Kenya Adventure</h3>
-                <p>Hiking and scenic trails around Kenya’s highest peak.</p>
-            </div>
+      </div>
+      <div class="tour-card">
+        <img src="A9HJooAf.webp" alt="Mount Kenya Tour" />
+        <div>
+          <h3>Mount Kenya Adventure</h3>
+          <p>Hiking and scenic trails around Kenya’s highest peak.</p>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 Car & Tour Services</p>
-    <p>📍 Kenya | 📞 +254 721 609343 | ✉️ <a href="mailto:josphatmuiyuro77@gmail.com">josphatmuiyuro77@gmail.com</a></p>
-</footer>
+    <p>📍 Kihara, Kiambu | 📞 +254 721 609343 | ✉️ <a href="mailto:josphatmuiyuro77@gmail.com">josphatmuiyuro77@gmail.com</a></p>
+  </footer>
 
-<!-- WhatsApp Sticky Button -->
-<a href="https://wa.me/254721609343" class="whatsapp-cta" target="_blank">
-  <i class="fab fa-whatsapp"></i> Book Now
-</a>
+  <!-- WhatsApp Sticky Button -->
+  <a href="https://wa.me/254721609343" class="whatsapp-cta">
+    <i class="fab fa-whatsapp"></i> Book Now
+  </a>
 
 </body>
-
 </html>
-
